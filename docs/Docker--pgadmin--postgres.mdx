@@ -1,0 +1,145 @@
+---
+title: Docker | pgadmin & postgres
+---
+
+\---
+
+title: Petualangan Docker: Menginstal dan Menggunakan pgAdmin dengan Mudah!
+
+\---
+
+\# Petualangan Docker: Menginstal dan Menggunakan pgAdmin dengan Mudah!
+
+\## Selamat Datang di Petualangan Docker!
+
+Selamat datang di petualangan instalasi dan penggunaan Docker! Anda siap untuk memulai perjalanan yang menarik menuju dunia kontainerisasi? Mari kita mulai!
+
+\## Instalasi Docker
+
+Langkah pertama adalah menginstal Docker di sistem Anda. Docker memungkinkan Anda untuk menjalankan aplikasi di lingkungan kontainer dengan mudah. Berikut langkah-langkahnya:
+
+1\. Buka terminal favorit Anda dan jalankan perintah:
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+apt update
+
+Enter to Rename, undefined to Preview
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+Enter to Rename, undefined to Preview
+
+2\. Setelah itu, tambahkan kunci GPG resmi Docker ke sistem Anda:
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+curl -fsSL https\://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/
+
+keyrings/docker-archive-keyring.gpg
+
+Enter to Rename, undefined to Preview
+
+3\. Tambahkan repositori Docker ke daftar sumber perangkat lunak:
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+echo "deb \[arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.
+
+gpg] https\://download.docker.com/linux/ubuntu $(lsb\_release -cs) stable" | sudo tee / etc / apt / 
+
+sources.list.d / docker.list > /dev/null
+
+Enter to Rename, undefined to Preview
+
+4\. Terakhir, instal Docker dengan perintah:
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+sudo apt install docker-ce
+
+Enter to Rename, undefined to Preview
+
+\## Menggunakan pgAdmin dengan Docker
+
+Sekarang saatnya untuk menjalankan pgAdmin menggunakan Docker. pgAdmin adalah alat manajemen database yang kuat dan mudah digunakan. Mari kita mulai!
+
+1\. Jalankan perintah ini untuk mengunduh dan menjalankan container pgAdmin dari Docker Hub:
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+docker pull dpage/pgadmin4
+
+Enter to Rename, undefined to Preview
+
+.monaco-editor .editor-widget {
+
+          display: none !important;
+
+          visibility: hidden !important;
+
+        }
+
+docker run -p 443:443 \\
+
+-v /data:/var/lib/pgadmin \\
+
+-v /home/ubuntu/server.cert:/certs/server.cert \\
+
+-v /home/ubuntu/server.key:/certs/server.key \\
+
+-v /tmp/servers.json:/pgadmin4/servers.json \\
+
+-e 'PGADMIN\_DEFAULT\_EMAIL=studentcloud121\@gmail.com' \\
+
+-e 'PGADMIN\_DEFAULT\_PASSWORD=yy123@#$' \\
+
+-e 'PGADMIN\_ENABLE\_TLS=True' \\
+
+-d dpage/pgadmin4
+
+Enter to Rename, undefined to Preview
+
+2\. Sekarang, Anda dapat mengakses pgAdmin melalui browser web Anda dengan menavigasi ke \`https\://alamatip/domain\`. Gunakan alamat email dan kata sandi yang telah Anda tentukan untuk masuk.
+
+\## Selamat! Anda Telah Berhasil!
+
+Selamat! Anda telah berhasil menginstal Docker dan menjalankan pgAdmin dengan menggunakan Docker. Kini Anda siap untuk menjelajahi dunia manajemen database dengan mudah dan cepat. Semoga Anda menikmati petualangan ini!
