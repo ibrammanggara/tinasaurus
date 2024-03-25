@@ -2,7 +2,7 @@
   "label": "Docs Sidebar",
   "items": [
     {
-      "document": "docs/Docker--pgadmin--postgres.mdx",
+      "document": "docs/pgadmin--postgres.mdx",
       "label": "Docker | pgadmin & postgres",
       "_template": "doc"
     },
