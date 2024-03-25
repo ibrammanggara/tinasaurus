@@ -75,7 +75,7 @@ docker pull postgres
 ```
 
 ```
-docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v data:/var/lib/postgresql/data -p 5432:5432 -d postgres
+docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v /data:/var/lib/postgresql/data -p 5432:5432 -d postgres
 ```
 
 Sekarang, PostgreSQL sudah berjalan di Docker. Anda dapat menggunakan pgAdmin untuk terhubung ke server database ini.
