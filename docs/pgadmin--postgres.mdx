@@ -75,13 +75,13 @@ docker pull postgres
 
 Sebelum anda menjalankan postgres, terlebih dahulu anda menambahkan folder yang ingin anda simpan,
 
-Lalu buat folder tersebut bisa di akses ke semua user
+Lalu buat folder tersebut bisa di akses ke user
 
 ```
 mkdir data && chmod 777 /data
 ```
 
-Sekarang, PostgreSQL sudah berjalan di Docker. Anda dapat menggunakan pgAdmin untuk terhubung ke server database ini.
+Lalu jalankan database postgres dengan perintah ini:
 
 ```
 docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v data:/var/lib/postgresql/data -p 5432:5432 -d postgres
