@@ -40,11 +40,27 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt install docker-ce
 ```
 
-Menggunakan pgAdmin dengan Docker
+Setelah berhasil menginstall docker, anda harus menyiapkan ssl untuk pgadmin anda, jika belum punya ssl anda bisa membuat dengan menggunakan openssl key dan tls cert self signed seperti dibawah ini:
+
+```
+openssl genrsa -out server.key 2048
+```
+
+```
+openssl req -new -x509 -key server.key -out server.cert -days 365
+```
+
+Isi data yang di perlukan untuk tls nya, dan ubah perijinan nya:
+
+```
+chmod 644 /home/ubuntu/server.cert /home/ubuntu/server.key
+```
+
+Setelah selesai anda bisa melanjutkan untuk menginstall pgadmin4
 
 ### Instalasi Pgadmin4
 
-1\. Jalankan perintah ini untuk mengunduh dan menjalankan container pgAdmin dari Docker Hub:
+1\. Jalankan perintah ini untuk mengunduh dan menjalankan container pgadmin4 dari Docker Hub:
 
 ```
 docker pull dpage/pgadmin4
@@ -63,9 +79,9 @@ docker run -p 443:443 \
 
 2\. Sekarang, Anda dapat mengakses pgAdmin melalui browser web Anda dengan menavigasi ke alamatip/domain. Gunakan alamat email dan kata sandi yang telah Anda tentukan untuk masuk.
 
-### Instalasi PostgreSQL
+### Instalasi Postgres
 
-mari instal PostgreSQL sebagai server database yang akan digunakan oleh pgAdmin.
+mari instal Postgres sebagai server database yang akan digunakan oleh pgadmin4.
 
 Jalankan perintah ini untuk mengunduh dan menjalankan container PostgreSQL dari Docker Hub:
 
@@ -87,4 +103,4 @@ Lalu jalankan database postgres dengan perintah ini:
 docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v data:/var/lib/postgresql/data -p 5432:5432 -d postgres
 ```
 
-Dengan demikian, Anda telah menyelesaikan instalasi Docker, pgAdmin, dan PostgreSQL dengan mudah. Selamat menikmati petualangan Anda dalam dunia pengelolaan database!
+Dengan demikian, Anda telah menyelesaikan instalasi Docker, pgadmin4, dan Postgres dengan mudah. Selamat menikmati petualangan Anda dalam dunia pengelolaan database!
