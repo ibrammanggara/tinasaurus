@@ -4,7 +4,7 @@ title: Docker | pgadmin & postgres
 
 ### Petualangan Docker: Menginstal dan Menggunakan pgAdmin untuk koneksi ke postgres anda
 
-Selamat datang di petualangan instalasi dan penggunaan Docker! 
+Selamat datang di petualangan instalasi dan penggunaan Docker!
 
 Anda siap untuk memulai perjalanan yang menarik menuju dunia kontainerisasi? Mari kita mulai!
 
@@ -51,14 +51,14 @@ docker pull dpage/pgadmin4
 ```
 
 ```
-docker run - p 443: 443 \
--v / home / ubuntu / server.cert: /certs/server.cert \
--v / home / ubuntu / server.key: /certs/server.key \
--v / tmp / servers.json: /pgadmin4/servers.json \
+docker run -p 443:443 \
+-v /home/ubuntu/server.cert:/certs/server.cert \
+-v /home/ubuntu/server.key:/certs/server.key \
+-v /tmp/servers.json:/pgadmin4/servers.json \
 -e 'PGADMIN_DEFAULT_EMAIL=studentcloud121@gmail.com' \
 -e 'PGADMIN_DEFAULT_PASSWORD=yy123@#$' \
 -e 'PGADMIN_ENABLE_TLS=True' \
--d dpage / pgadmin4
+-d dpage/pgadmin4
 ```
 
 2\. Sekarang, Anda dapat mengakses pgAdmin melalui browser web Anda dengan menavigasi ke alamatip/domain. Gunakan alamat email dan kata sandi yang telah Anda tentukan untuk masuk.
@@ -67,7 +67,7 @@ docker run - p 443: 443 \
 
 mari instal PostgreSQL sebagai server database yang akan digunakan oleh pgAdmin.
 
- Jalankan perintah ini untuk mengunduh dan menjalankan container PostgreSQL dari Docker Hub:    
+Jalankan perintah ini untuk mengunduh dan menjalankan container PostgreSQL dari Docker Hub:
 
 ```
 docker pull postgres
