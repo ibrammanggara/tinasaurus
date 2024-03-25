@@ -53,7 +53,7 @@ openssl req -new -x509 -key server.key -out server.cert -days 365
 Isi data yang di perlukan untuk tls nya, dan ubah perijinan nya:
 
 ```
-chmod 644 /home/ubuntu/server.cert /home/ubuntu/server.key
+chmod 644 server.cert && chmod 644 server.key
 ```
 
 Setelah selesai anda bisa melanjutkan untuk menginstall pgadmin4
