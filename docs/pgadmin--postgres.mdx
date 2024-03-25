@@ -28,7 +28,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 
-3\. Tambahkan repositori Dcker ke daftar sumber perangkat lunak:
+3\. Tambahkan repositori Docker ke daftar sumber perangkat lunak:
 
 ```
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -42,7 +42,7 @@ sudo apt install docker-ce
 
 Menggunakan pgAdmin dengan Docker
 
-Sekarang saatnya untuk menjalankan pgAdmin menggunakan Docker. pgAdmin adalah alat manajemen database yang kuat dan mudah digunakan. Mari kita mulai!
+### Instalasi Pgadmin4
 
 1\. Jalankan perintah ini untuk mengunduh dan menjalankan container pgAdmin dari Docker Hub:
 
@@ -63,7 +63,7 @@ docker run -p 443:443 \
 
 2\. Sekarang, Anda dapat mengakses pgAdmin melalui browser web Anda dengan menavigasi ke alamatip/domain. Gunakan alamat email dan kata sandi yang telah Anda tentukan untuk masuk.
 
-### Instalasi PostgreSQL Menggunakan Docker
+### Instalasi PostgreSQL
 
 mari instal PostgreSQL sebagai server database yang akan digunakan oleh pgAdmin.
 
@@ -73,10 +73,18 @@ Jalankan perintah ini untuk mengunduh dan menjalankan container PostgreSQL dari 
 docker pull postgres
 ```
 
+Sebelum anda menjalankan postgres, terlebih dahulu anda menambahkan folder yang ingin anda simpan,
+
+Lalu buat folder tersebut bisa di akses ke semua user
+
 ```
-docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v /data:/var/lib/postgresql/data -p 5432:5432 -d postgres
+mkdir data && chmod 777 /data
 ```
 
 Sekarang, PostgreSQL sudah berjalan di Docker. Anda dapat menggunakan pgAdmin untuk terhubung ke server database ini.
+
+```
+docker run --name postgres -e POSTGRES_PASSWORD=pp123@#$ -v data:/var/lib/postgresql/data -p 5432:5432 -d postgres
+```
 
 Dengan demikian, Anda telah menyelesaikan instalasi Docker, pgAdmin, dan PostgreSQL dengan mudah. Selamat menikmati petualangan Anda dalam dunia pengelolaan database!
