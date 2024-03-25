@@ -3,7 +3,7 @@
   "items": [
     {
       "document": "docs/Docker--pgadmin--postgres.mdx",
-      "label": "docker",
+      "label": "",
       "_template": "doc"
     },
     {
