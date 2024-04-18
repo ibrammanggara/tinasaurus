@@ -2,6 +2,12 @@
   "label": "Docs Sidebar",
   "items": [
     {
+      "title": "installasi wireguard vpn",
+      "link": "doc",
+      "docLink": "docs/Wireguard-VPN.mdx",
+      "_template": "category"
+    },
+    {
       "document": "docs/pgadmin--postgres.mdx",
       "label": "Docker | pgadmin & postgres",
       "_template": "doc"
