@@ -3,6 +3,7 @@
   "items": [
     {
       "document": "docs/Wireguard-VPN.mdx",
+      "label": "Installasi wireguard vpn",
       "_template": "doc"
     },
     {
