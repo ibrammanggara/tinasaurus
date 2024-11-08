@@ -20,6 +20,10 @@
       "link": "generated",
       "items": [
         {
+          "document": "docs/pgadmin--postgres.mdx",
+          "_template": "doc"
+        },
+        {
           "document": "docs/Wireguard-VPN.mdx",
           "_template": "doc"
         }
