@@ -22,7 +22,15 @@ Berikut adalah beberapa perintah dasar yang akan kita pelajari:
 sudo
 ```
 
-Perintah dengan hak akses superuser (root).
+Perintah dengan hak akses superuser (root).\
+\
+Contoh penggunaan:
+
+Pada saat pertama kali masuk ssh, biasanya masuk dengan user biasa lalu ingin merubah ke user root agar mendapatkan akses penuh
+
+```
+sudo su
+```
 
 ```
 pwd
@@ -30,11 +38,32 @@ pwd
 
 Menampilkan direktori tempat kamu berada saat ini.
 
+Contoh penggunaan:
+
+Pada saat ingin mengetahui kita sedang di dalam direktori mana
+
+```
+pwd
+```
+
+\
+Lalu muncul output nya, contoh:
+
+/home/ubuntu/
+
 ```
 ls
 ```
 
 Menampilkan daftar file dan folder dalam direktori saat ini.
+
+Contoh penggunaan:
+
+Saat kita mau melihat file dan direktori pada terminal
+
+```
+ls
+```
 
 ```
 cd
@@ -42,17 +71,49 @@ cd
 
 Pindah antar direktori.
 
+Contoh penggunaan:
+
+Pada terminal setelah melihat file/direktori dengan perintah ls
+
+Saya ingin masuk ke direktori (myfolder) yang ada pada list di terminal
+
+```
+cd myfolder
+```
+
 ```
 mkdir
 ```
 
 Membuat folder baru.
 
+Contoh penggunaan:
+
+Pada saat kita ingin membuat dikrektori baru dan dengan nama yang kita buat
+
+Misal nama direktori nya (myfolder)
+
+```
+mkdir myfolder
+```
+
 ```
 rm
 ```
 
 Menghapus file atau folder.
+
+Contoh penggunaan:
+
+Pada saat kita tidak membutuhkan file atau folder
+
+```javascript
+rm -rf myfolder
+```
+
+```javascript
+rm myfile
+```
 
 ```
 cp
